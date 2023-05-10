@@ -1,0 +1,10 @@
+div {
+    margin-top: 10px;
+}
+
+ul {
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}

@@ -23,7 +23,7 @@ export default ({ posts }) => {
 
 export const getStaticProps = async () => {
     //allPosts => 해당 경로의 mdx파일을 배열에 담아서 전송해줌!
-    const posts = allPosts.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+    const posts = allPosts.filter((i) => i._raw.sourceFilePath.includes("/index.mdx"));
 
     return {
         props: {

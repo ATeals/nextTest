@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     // const collection = getCollactionItem(params.slug);
-    const collection = allPosts;
+    const collection = allPosts.filter((i) => !i._raw.sourceFilePath.includes("/index.mdx")).filter((i) => i._raw.flattenedPath.includes(params.slug));
     return {
         props: {
             collection,

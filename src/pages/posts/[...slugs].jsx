@@ -6,7 +6,6 @@ export default ({ post }) => {
     return (
         <>
             <article className="post">
-                <h1>{post.title}</h1>
                 <div className="log">
                     <MarkdownPost post={post.body.code} />
                 </div>

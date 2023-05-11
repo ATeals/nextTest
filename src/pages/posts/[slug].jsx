@@ -1,9 +1,23 @@
 import { allPosts } from "contentlayer/gererated";
 import "github-markdown-css";
+import Link from "next/link";
 
 export default ({ collection }) => {
     console.log(collection);
-    return <div>hello</div>;
+    return (
+        <div>
+            {collection.map((item) => {
+                return (
+                    <Link href={`/posts/${item._raw.flattenedPath}`}>
+                        <h1>{item.title}</h1>
+                        <h1>{item.description}</h1>
+                        <h1>{item.date}</h1>
+                        <br />
+                    </Link>
+                );
+            })}
+        </div>
+    );
 };
 
 export const getStaticPaths = async () => {

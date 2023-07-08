@@ -11,10 +11,7 @@ export default function Home() {
             <section className="w-full ">
                 <section>
                     <h1 className="font-bold text-[32px] mx-10">최근 포스트</h1>
-                    <CardList
-                        posts={posts}
-                        num={4}
-                    />
+                    <CardList posts={posts} />
                     <div className="w-full text-end  mb-5">
                         <a
                             href="/collection"
